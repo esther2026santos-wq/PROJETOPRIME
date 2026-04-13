@@ -1,0 +1,62 @@
+ 
+
+/* root: seletor para elementos riz do documento. usado par definir variaveis CSS Globais */
+:root{
+    --bg--dark: #2C4C8C; /*variavel para cor de fundo*/
+    --bg--card: #002162; /*variavel de cor de fundo do card*/
+    --primary-color: #002162 ; /*variavel de cor neon primaria*/
+    --segundary--neon : #00143B; /*variavel de cor neon segundaria*/
+    --text-main: #ffff; /*variavel cor de texto*/
+    --text--dim: #a0a0a0; /*variavel para texto segundario*/
+    --transition: all 0.3s ease; /*variavel de transicao suave de 0.3s*/
+
+
+}
+
+* {
+    margin: 0; /* remove todas as margens externas*/
+    padding: 0; /*remover todos od preenchimento interno*/
+    box-sizing: border-box; /*Inclui padding e border na largura/altura total do elemento*/
+}
+
+html{
+    scroll-behavior: smooth;/*Define a rolagem suave para ãncoras*/
+}
+
+body{
+    font-family: 'inter' , sans-serif;/*define a familia da font como primaria*/
+    background-color: var(--bg--dark);/*define a cor do fundo usando variavel*/
+    color: var(--text-main); /*definindo a cor do texto usando variavel*/
+    line-height: 1.6; /*define altura da linha para melhor legibilidade*/
+    overflow-x: hidden; /*Esconde overflow (barra horinzontal)*/
+
+}
+
+/*classe para o container centralizado*/
+.container {
+    max-width: 1200px; /*Define largura maxima do container*/
+    margin: 0 auto; /*Centraliza o container horizontalmente*/
+    padding: 0 20px; /*Adicionar preenchimento lateral*/
+
+}
+
+/*Navbar Classe para barra de navegação*/
+.navbar {
+    height: 80px; /*Define altura fixa da navbar*/
+    display: flex; /* Usa flexbox para o layout*/
+    align-items: center; /* Alinha os itens verticalmente ao centro*/
+    background-color:  rgba(15, 17, 26, 0.95); 
+    position: sticky; /*Fixar o navbar no topo durante a rolagem*/
+    top: 0; /*Posicina o topo do viewport*/
+    z-index: 1000; /*garante que o navbar fique acima dos outros elementos*/
+    border-bottom: 1px solid #2a2d3e;
+
+}
+
+/*flex-nav classse para o layout flexivel da navegação*/
+.flex-nav {
+    display: flex; /*Flexbox para alinhamento*/
+    justify-content: space-between; /*Justificar o espaço entre os elementos (itens) igualmennte*/
+    align-items: center; /*Linhas os itens verificalmente ao centro*/
+    width: 100%; /*Largura total*/
+}
