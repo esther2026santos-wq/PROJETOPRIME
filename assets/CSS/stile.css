@@ -1,0 +1,187 @@
+ 
+
+/* root: seletor para elementos riz do documento. usado par definir variaveis CSS Globais */
+:root{
+    --bg--dark: #2C4C8C; /*variavel para cor de fundo*/
+    --bg--card: #002162; /*variavel de cor de fundo do card*/
+    --primary--neon: #002162 ; /*variavel de cor neon primaria*/
+    --segundary--neon : #00143B; /*variavel de cor neon segundaria*/
+    --text-main: #ffff; /*variavel cor de texto*/
+    --text--dim: #a0a0a0; /*variavel para texto segundario*/
+    --transition: all 0.3s ease; /*variavel de transicao suave de 0.3s*/
+
+
+}
+
+* {
+    margin: 0; /* remove todas as margens externas*/
+    padding: 0; /*remover todos od preenchimento interno*/
+    box-sizing: border-box; /*Inclui padding e border na largura/altura total do elemento*/
+}
+
+html{
+    scroll-behavior: smooth;/*Define a rolagem suave para ãncoras*/
+}
+
+body{
+    font-family: 'inter' , sans-serif;/*define a familia da font como primaria*/
+    background-color: var(--bg--dark);/*define a cor do fundo usando variavel*/
+    color: var(--text-main); /*definindo a cor do texto usando variavel*/
+    line-height: 1.6; /*define altura da linha para melhor legibilidade*/
+    overflow-x: hidden; /*Esconde overflow (barra horinzontal)*/
+
+}
+
+/*classe para o container centralizado*/
+.container {
+    max-width: 1200px; /*Define largura maxima do container*/
+    margin: 0 auto; /*Centraliza o container horizontalmente*/
+    padding: 0 20px; /*Adicionar preenchimento lateral*/
+
+}
+
+/*Navbar Classe para barra de navegação*/
+.navbar {
+    height: 80px; /*Define altura fixa da navbar*/
+    display: flex; /* Usa flexbox para o layout*/
+    align-items: center; /* Alinha os itens verticalmente ao centro*/
+    background-color:  rgba(15, 17, 26, 0.95); 
+    position: sticky; /*Fixar o navbar no topo durante a rolagem*/
+    top: 0; /*Posicina o topo do viewport*/
+    z-index: 1000; /*garante que o navbar fique acima dos outros elementos*/
+    border-bottom: 1px solid #2a2d3e;
+
+}
+
+/*flex-nav classse para o layout flexivel da navegação*/
+.flex-nav {
+    display: flex; /*Flexbox para alinhamento*/
+    justify-content: space-between; /*Justificar o espaço entre os elementos (itens) igualmennte*/
+    align-items: center; /*Linhas os itens verificalmente ao centro*/
+    width: 100%; /*Largura total*/
+}
+
+/*Logo*/
+.logo {
+    font-size: 1.9rem; /*tamanho da font maior*/
+    font-weight: 700; /*Peso da fonte*/
+    letter-spacing: -1px; /*Espaçamento entre as letras fica reduzindo*/
+}
+
+/*Logo span estiliza a parte da logo colorida*/
+.logo span {
+    color: var(--primary--neon); /*Cor do texto usando variavel*/
+}
+
+/*Lista de menu de navegação*/
+.nav-menu ul {
+    display: flex; /*layout flexível horizontal*/
+    list-style: none; /*Remover os marcadores da lista*/
+}
+
+/*Links do menu*/
+.nav-menu ul li a {
+    color: var(--text--dim); /*Cor do texto usando variavel*/
+    text-decoration: none; /*Remove o Sublinhado*/
+    margin: 0 15px; /*Espaçamento apenas nas laterais*/
+    font-size: 0.9rem; /*fonte no tamanho suave*/
+    transition: var(--transition) /*transição suave*/
+}
+
+/*Estado de houver dos links*/
+.nav-menu li a:hover {
+    color: var(--segundary--neon); /*Cor do texto usando variavel*/
+}
+
+/*Classe dos Botões de antrar e criar sua conta*/
+.btn {
+    padding: 10px 22px; /*Espaçamento interno*/
+    border-radius: 8px; /*Nordas arredondadas*/
+    text-decoration: none; /* remove o subliminhado*/
+    font-weight: 600; /*Peso da fonte*/
+    font-size: 0.9rem; /*Tamanho da fonte*/
+    transition: var(--transition); /* */
+    display: inline-block ;/* Exibe como um bloco em linha*/
+}
+
+.btn-neon {
+    background: linear-gradient(135deg,var(--primary--neon), #9d50bb); /*Cor de fundo no estilo grediente*/
+    color: #ffff; /*Cor de texto*/
+    box-shadow: 0 4px 15px rgba(123, 47, 247, 0.3) /*Sombra colorida*/
+}
+
+.btn-neon:hover{
+    transform: translateY(-2px); /*Move ligeiramente para cima*/
+    box-shadow: 0 6px 20px rgba(123, 47, 247, 0.5) /*Sombra maior no hever*/
+}
+
+.btn-outline {
+    border: 1px solid var(--primary--neon); /*Borda usando a variavel*/
+    color: #ffff; /*Cor do texto*/
+}
+
+.btn-outline:hover {
+    background: rgba(123, 47, 247, 0.1);
+}
+
+/*Hero section*/
+
+/*.hero: classe para seção pricipal*/
+.hero{
+    padding: 100px 0; /*Preenchimento vertical*/
+    min-height: calc(100vh - 80px); /*Altura minima da viewport menos o navbar*/
+    display: flex; /*para centralizar*/
+    align-items: center; /*Alinha os itens ao centro*/
+}
+
+/*.grid-hero: Grid para o layout da seção hero*/
+.grid-hero {
+    display: grid; /*Usa css Grid*/
+    grid-template-columns: 1fr 1fr; /*Cplunas proporcionais*/
+    gap: 40px; /*espaçamento entre colunas*/
+    align-items: center; /*Alinhar os itens ao centro*/
+}
+/*classe do texto gradiente*/
+.text-gradiente{
+    background: linear-gradient(to right, var(--primary--neon),var(--segundary--neon)); /*cor do fundo grediente horizontal*/
+    -webkit-background-clip: text; /*aplicar gredientes ao texto*/
+    -webkit-text-fill-color: transparent; /*torna texto transparente para mostrar o grediente*/
+}
+
+/*Titulo da seção Hero*/
+.hero-test h1{
+    font-size: 3.5rem; /*tamanho da fonte*/
+    line-height: 1.1; /*altura da linha*/
+    margin-bottom: 20px; /*espaçamento inferior*/
+}
+
+/*paragrafo da seção*/
+.hero-text p {
+    font-size: 1.1rem; /*fonte tamanho medio*/
+    color: var(--text--dim); /*Cor do texto*/
+    margin-bottom: 30px; /*Espaçamento inferior*/
+    max-width: 500px; /*Maxima largura*/
+}
+
+.card-mockup {
+    border-radius: 20px; /*borda arredondada*/
+    position: relative; /*posicionamento relativo*/
+}
+
+.card-mockup img {
+    width: 100%; 
+}
+
+
+
+/*Responsividade para outras telas*/
+@media(max-width: 992px) {
+    .nav-menu,
+    .nav-btns {
+        display: none; /*Ocultar os elementos*/
+
+    }
+    
+}
+
+    
