@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,131 +8,137 @@
     <link rel="stylesheet" href="/assets/css/stile.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 
 
 <body>
-<!-- Header : define o o cabeçalho da pagina , geralmente contendo navegação e logotipo-->
-<header class="navbar">
-    <div class="container flex-nav">
-        <!-- essa div contem o Logotipo do site, com apan para estilizar parte do texto-->
-        <div class="logo">GESTÃO<span>PRIME</span></div>
-    </div>
-    <!-- tag nav define uma seção de navegação-->
-    <nav class="nav-menu">
-        <!-- ul : lista não ordenada para itens do menu-->
-        <ul>
-            <!-- li: item de listas; a: Link ancora para seçoês da pagina-->
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#features">Funcionalidades</a></li>
-            <li><a href="#plan">Planos</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#contact">Contato</a></li>
-        </ul>
-        <!-- div nav-btns: agrupa botoes de navegação-->
-        <div class="nav-btns">
-            <a href="#" class="btn btn-outiline">Login</a>
-            <a href="#" class="btn btn-neon">Criar sua conta</a>
+    <!-- Header : define o o cabeçalho da pagina , geralmente contendo navegação e logotipo-->
+    <header class="navbar">
+        <div class="container flex-nav">
+            <!-- essa div contem o Logotipo do site, com apan para estilizar parte do texto-->
+            <div class="logo">GESTÃO<span>PRIME</span></div>
         </div>
-        <!--div menu-toggle ? Botão do menu para dispositivos moveis-->
-        <div class="menu-toggle" id="mobile-menu">
-            <!--span: Elementos para criar icones do menu hamburguer-->
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-</nav>
-
-</header>  
-<!--Section define uma seção na pagina ,aqui seção é a principal (home) com a classe hero-->
-<section id="home" class="hero">
-    <!--div container: Wrapper para centralizar e limitar a largura do conteudo-->
-    <div class="container-grid-hero">
-        <h1>Liberte-se da finanças complicadas.<br><span class="text-gredientes">Viva com Inteligentes</span>
-        </h1>
-
-        <p>O Gestão Prime é a plataforma SaaS feita para quem busca segurança e clareza na gestão de receitas, despesas e metas.</p>
-
-        <!--div hero action agrupo botoes de ação-->
-        <div class="hero-action">
-            <a href="#" class="btn btn-neon">Experimente Grátis</a>
-            <a href="#" class="btn btn-neon">Ver demo</a>
-
-        </div>
-    </div>
-    <!--div hero-visual contem elemento visuais da seção hero-->
-    <div class="hero-visual">
-        <!--div simulação visual de um card ou interface-->
-        <div class="card-mockup">
-
-            <img src="assets/imagem/sistema.png" alt="imagem do sistema">
-            <!--div chart-line elemento decorativo para grafici-->
-            <di class="chart-line"></di>
-            <!--div startd-row linha de estatisticas-->
-            <div class="startd-row">
-                <!--div stat-box é de caixa de etatisticas-->
-                <div class="stat-box"></div>
-                <div class="stat-box"></div>
+        <!-- tag nav define uma seção de navegação-->
+        <nav class="nav-menu">
+            <!-- ul : lista não ordenada para itens do menu-->
+            <ul>
+                <!-- li: item de listas; a: Link ancora para seçoês da pagina-->
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#features">Funcionalidades</a></li>
+                <li><a href="#plan">Planos</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            <!-- div nav-btns: agrupa botoes de navegação-->
+            <div class="nav-btns">
+                <a href="#" class="btn btn-outiline">Login</a>
+                <a href="#" class="btn btn-neon">Criar sua conta</a>
             </div>
-
-        </div>
-    </div>
-
-    <div>
-
-    </div>
-
-</section>
-
-<section id="feature" class="feature">
-    <div class="container">
-        <h2 class="section-title"> A inteligencia financeira ao seu alcance</h2>
-        <div class="grid-feature">
-            <div class="feature-card">
-                <div class="icon"><span><i class="fa-solid fa-chart-simple"></i></span></div>
-                <h3>Dashbord intuitivo</h3>
-                <p>Visualize sua saúde financeira com gráficos claros e objetivos</p>
-                
+            <!--div menu-toggle ? Botão do menu para dispositivos moveis-->
+            <div class="menu-toggle" id="mobile-menu">
+                <!--span: Elementos para criar icones do menu hamburguer-->
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-            <div class="feature-card">
-                <div class="icon"><i class="fa-regular fa-credit-card"></i></div><i class="fa-solid fa-cards"></i>
-                <h3>Gestão de Cartões</h3>
-                <p>Monitore parcelamento e evite surpresas na farura do proximo mês</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon"></div><i class="fa-solid fa-bullseye"></i>
-                <h3>Metas Financeiras</h3>
-                <p>Crie objetivos reais e acompanhe sua evolução</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon"></div><i class="fa-solid fa-lock"></i>
-                <h3>Segurança máxima</h3>
-                <p>Dados criptografados em padrões bancários de proteção</p>
+        </nav>
+
+    </header>
+    <!--Section define uma seção na pagina ,aqui seção é a principal (home) com a classe hero-->
+    <section id="home" class="hero">
+        <!--div container: Wrapper para centralizar e limitar a largura do conteudo-->
+        <div class="container-grid-hero">
+            <h1>Liberte-se da finanças complicadas.<br><span class="text-gredientes">Viva com Inteligentes</span>
+            </h1>
+
+            <p>O Gestão Prime é a plataforma SaaS feita para quem busca segurança e clareza na gestão de receitas,
+                despesas e metas.</p>
+
+            <!--div hero action agrupo botoes de ação-->
+            <div class="hero-action">
+                <a href="#" class="btn btn-neon">Experimente Grátis</a>
+                <a href="#" class="btn btn-neon">Ver demo</a>
+
             </div>
         </div>
+        <!--div hero-visual contem elemento visuais da seção hero-->
+        <div class="hero-visual">
+            <!--div simulação visual de um card ou interface-->
+            <div class="card-mockup">
+
+                <img src="assets/imagem/sistema.png" alt="imagem do sistema">
+                <!--div chart-line elemento decorativo para grafici-->
+                <di class="chart-line"></di>
+                <!--div startd-row linha de estatisticas-->
+                <div class="startd-row">
+                    <!--div stat-box é de caixa de etatisticas-->
+                    <div class="stat-box"></div>
+                    <div class="stat-box"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+
+    </section>
+
+    <section id="feature" class="feature">
+        <div class="container">
+            <h2 class="section-title"> A inteligencia financeira ao seu alcance</h2>
+            <div class="grid-feature">
+                <div class="feature-card">
+                    <div class="icon"><span><i class="fa-solid fa-chart-simple"></i></span></div>
+                    <h3>Dashbord intuitivo</h3>
+                    <p>Visualize sua saúde financeira com gráficos claros e objetivos</p>
+
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fa-regular fa-credit-card"></i></div><i class="fa-solid fa-cards"></i>
+                    <h3>Gestão de Cartões</h3>
+                    <p>Monitore parcelamento e evite surpresas na farura do proximo mês</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"></div><i class="fa-solid fa-bullseye"></i>
+                    <h3>Metas Financeiras</h3>
+                    <p>Crie objetivos reais e acompanhe sua evolução</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"></div><i class="fa-solid fa-lock"></i>
+                    <h3>Segurança máxima</h3>
+                    <p>Dados criptografados em padrões bancários de proteção</p>
+                </div>
+            </div>
             <p class="test">
-                Lorem ipsure , dolor sit meet consectetur adipicing elit .A alias aliquid ipsam otion, ipsat at, tempora est asperiores muquam provident dolorum illo facere id qui dolores? ad fugit asperiores dolorum
-                Lorem ipsure , dolor sit meet consectetur adipicing elit .A alias aliquid ipsam otion, ipsat at, tempora est asperiores muquam provident dolorum illo facere id qui dolores? ad fugit asperiores dolorum
-                Lorem ipsure , dolor sit meet consectetur adipicing elit .A alias aliquid ipsam otion, ipsat at, tempora est asperiores muquam provident dolorum illo facere id qui dolores? ad fugit asperiores dolorum?
+                Lorem ipsure , dolor sit meet consectetur adipicing elit .A alias aliquid ipsam otion, ipsat at, tempora
+                est asperiores muquam provident dolorum illo facere id qui dolores? ad fugit asperiores dolorum
+                Lorem ipsure , dolor sit meet consectetur adipicing elit .A alias aliquid ipsam otion, ipsat at, tempora
+                est asperiores muquam provident dolorum illo facere id qui dolores? ad fugit asperiores dolorum
+                Lorem ipsure , dolor sit meet consectetur adipicing elit .A alias aliquid ipsam otion, ipsat at, tempora
+                est asperiores muquam provident dolorum illo facere id qui dolores? ad fugit asperiores dolorum?
             </p>
         </div>
-    
 
-</section>
 
-<!--Seção sobre planos de assinaturas-->
-<section id="plan" class="plan">
-    <h2 class="section-title">Planos</h2>
-    <div class="grid-plan">
-        <div class="plan-card">
-            <div class="icon"> <span><i class="fa-solid fa-medal"></i></span></div>
-            <h3>Livre</h3>
-            <p>Experimente Gestão Prime</p>
-            <p class="price">R$ 0,<span>00</span></p>
-            <a href="#" class="btn btn-outiline">contratar</a>
-            <h2>
+    </section>
+
+    <!--Seção sobre planos de assinaturas-->
+    <section id="plan" class="plan">
+        <h2 class="section-title">Planos</h2>
+        <div class="grid-plan">
+            <div class="plan-card">
+                <div class="icon"> <span><i class="fa-solid fa-face-smile"></i></span></div>
+                <h3>Livre</h3>
+                <p>Experimente Gestão Prime</p>
+                <p class="price">R$ 0,<span>00</span></p>
+                <a href="#" class="btn btn-outiline">contratar</a>
+                <hr>
                 <div class="plan-list">
                     <ul>
                         <li>Item 1</li>
@@ -141,13 +148,14 @@
                     </ul>
 
                 </div>
-                <div class="plan-card plan-highlight"></div>
-            <div class="icon"> <span><i class="fa-solid fa-face-smile"></i>></span></div>
-            <h3>Pro</h3>
-            <p>Para produtividade diária</p>
-            <p class="price">R$ 49,<span>99</span></p>
-            <a href="#" class="btn btn-outiline">contratar</a>
-            <h2>
+            </div>
+            <div class="plan-card plan-highlight">
+                <div class="icon"> <span><i class="fa-solid fa-medal"></i></span></div>
+                <h3>Pro</h3>
+                <p>Para produtividade diária</p>
+                <p class="price">R$ 49,<span>99</span></p>
+                <a href="#" class="btn btn-outiline btn-dark">contratar</a>
+                <hr>
                 <div class="plan-list">
                     <ul>
                         <li>Tudo do plano gratuito</li>
@@ -156,29 +164,86 @@
                         <li>Item 3</li>
                         <li>Item 4</li>
                     </ul>
+                </div>
+            </div>
+
+            <div class="plan-card">
+                <div class="icon"> <span><i class="fa-solid fa-crown"></i></span></div>
+                <h3>Premium</h3>
+                <p> Tire o máximo proveito de Gestão Prime</p>
+                <p class="price">R$ 99,<span>99</span></p>
+                <a href="#" class="btn btn-outiline ">contratar</a>
+                <hr>
+                <div class="plan-list">
+                    <ul>
+                        <li>Tudo do plano gratuito</li>
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                        <li>Item 4</li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+    </section>
+
+    <!--Seção do blog-->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="section-title">Blog</h2>
+            <div class="grid-blog">
+                <div class="blog-card">
+                    <img src="assets/imagem/post1 (1).jpg" alt=" post do blog">
+                    <h3>Titulo do blog</h3>
+                    <p>Loren ipsum dolor slit amet</p>
+                    <div class="blog-fonter-card">
+                        <a href="#" class="btn btn-outiline"> Ver mais</a>
                     </div>
                 </div>
-            <div class="icon"> <span><i class="fa-solid fa-crown"></i></span></div>
-            <h3>Premium</h3>
-            <p> Tire o máximo proveito de Gestão  Prime</p>
-            <p class="price">R$ 99,<span>99</span></p>
-            <a href="#" class="btn btn-outiline">contratar</a>
-            <h2>
-                <div class="plan-list">
-                    <ul>
-                        <li>Tudo do plano gratuito</li>
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
-                        <li>Item 4</li>
-                    </ul>
 
+
+
+
+                <div class="blog-card">
+                    <img src="assets/imagem/post1 (1).jpg" alt=" post do blog">
+                    <h3>Titulo do blog</h3>
+                    <p>Lorem ipsum dolor slit amet</p>
+                    <div class="blog-fonter-card">
+                        <a href="#" class="btn btn-outiline">Ver mais</a>
+                    </div>
                 </div>
-            </h2>
-        
+                <div class="blog-card">
+                    <img src="assets/imagem/post1 (1).jpg" alt=" post do blog">
+                    <h3>Titulo do blog</h3>
+                    <p>Lorem ipsum dolor slit amet</p>
+                    <div class="blog-fonter-card">
+                        <a href="#" class="btn btn-outiline">Ver mais</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="assets/imagem/post1 (1).jpg" alt=" post do blog">
+                    <h3>Titulo do blog</h3>
+                    <p>Lorem ipsum dolor slit amet</p>
+                    <div class="blog-fonter-card">
+                        <a href="#" class="btn btn-outiline">Ver mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="box-btn-blog">
+                <a href="#" class="btn btn-neon">Ir ao blog</a>
+            </div>
         </div>
         
-    </div>
-</section>
+
+
+
+
+    </section>
+
 </body>
+
 </html>

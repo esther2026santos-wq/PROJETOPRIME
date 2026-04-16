@@ -215,8 +215,133 @@ body{
     margin-bottom: 20px; /*espaçamento inferior*/
 }
 
+/*Seção de planos*/
+.plan{
+    padding: 80px; /*espaçamento  interno*/
+    background: var(--bg--dark); /*cor de fundo usando variavel*/
+} 
+.grid-plan{
+    display: grid; /*CSS grid*/
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /*grid-tample-columns : colunas responsivas/A propriedade grid-tample-comuns: reapt(auto-fit, minmax(250px,1fr)),define as colunas do grid são estruturas.-reapt():repete um padrão de colunas, aqui ele cria multiplas colunas com o mesmo tamanho - auto-fit: ajusta automaticamente o numero de colunas para caber no espaço disponivel. Ele "Encaixa" o maximo possivel de colunas sem ultrapassar a largura do container,evitando espaços vazios desnecessarios. - minmax: define o tamanho minimo e maximo de cada coluna:width:250px:Largura minima de cada coluna (garante que não fique estreito)-1f:largura maxima como uma fração (1fr) do espaço restante,permitindo que as colunas se espandas igualmente para preencher o container.*/
+    gap: 25px; /*Espaçamento*/
+
+}
 
 
+/*Classe de card dos planos*/
+.plan-card {
+    background: var(--bg--card); /*Cor do fundo dos cards*/
+    padding: 40px 30px; /*espaçamento interno*/
+    border-radius: 15px; /*borda arredondada*/
+    transition: var(--transition); /*transição suave*/
+    border: 1px solid transparent;
+    display: flex; /*tipo da display (flexivel)*/
+    align-items: center; /*alinhamento dos itens*/
+    flex-direction: column; /*direção dos itens em coluna*/
+}
+
+.plan-card:hover {
+    border-color: var(--primary--neon); /*cor da borda*/
+    transform: translateY(-10px); /*movimenta o card para cima*/
+}
+
+.plan-card.icon {
+    font-size: 2.5rem; /*tamanho grande dos icones*/
+    margin-bottom: 20px; /*espaçamento inferior*/
+}
+
+/*Lista de itens*/
+.plan-list {
+    padding: 30px; /*espaçamento em cima em baixo*/
+    width: 100%; /*ocupando largura total*/
+}
+
+
+.plan-card ul {
+    padding: 20px; /*espaçamento interno*/
+}
+
+.plan-card li{
+    list-style-image: url(/assets/imagem/Vector.png); /*icone personalizado */
+}
+
+
+/*Price*/
+
+.price {
+    font-size: 30px; /*tamanho da fonte*/
+    padding: 30px 0;
+}
+
+.price span {
+    font-size: 20px;
+}
+
+.plan-card hr {
+    width: 100%;
+    margin-top: 33px;
+    border: 1px solid #2a2d3e;
+}
+
+.plan-highlight{
+    background: #7d31f3;
+}
+
+.btn-dark{
+    border: 1px solid #1a1d2e;
+}
+
+.btn-dark:hover {
+    background: rgba(52, 20, 105, 0.1);
+}
+
+/*seção do blog*/
+.blog{
+    padding: 80px;
+    background: #0a0c14;
+}
+
+.grid-blog{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.blog-card{
+    background: var(--bg--card);
+    padding: 40px 30px;
+    border-radius: 15px;
+    transition: var(--transition);
+    border: 1px solid transparent;
+    position: relative;
+    padding-bottom: 90px;
+}
+
+.blog-card:hover {
+    border-color: var(--primary--neon);
+    transform: translateY(-10px);
+}
+
+.blog-card img {
+    width: 100%;
+}
+
+.blog-ffoter-card {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.box-btn-blog {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+
+}
 /*Responsividade para outras telas*/
 @media(max-width: 992px) {
     .nav-menu,
