@@ -1,0 +1,143 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicional</title>
+</head>
+<body>
+
+    <script>
+        let idade = 18;
+        let cnh = true;
+
+        if(idade>=18){
+            console.log('Voce pode dirigir');
+            if(cnh == true){
+            }else{
+                console.log('Voce é maior de idade mas não tem cnh e não pode dirigir');
+
+            }
+        }else{
+            console.log('Voce não pode dirigir');
+        }
+
+        let nota = 8
+
+        if(nota >= 7){
+            console.log('Aprovado')
+        }
+        else if(nota >= 5){
+            console.log('Recuperação')
+        }
+        else{
+            console.log('Reprovado')
+        }
+
+        //nota 
+        //nota >= 7 aprovado
+        //senão reprovado
+
+
+        let fruta = 'morango';
+
+        switch(fruta){
+            case 'morango':
+                console.log('Morango')
+                break
+            case 'pera':
+                console.log('Pera')
+                break    
+            default:
+                console.log('Fruta não encontrada')    
+        }
+
+        if (fruta == 'morango'){
+            console.log('Morango')
+        }else if(fruta == 'pera'){
+            console.log('Pera')
+        }
+        else{
+            console.log('Fruta não encontrada')
+        }
+
+
+
+        let dia = new Date().getDay(); 
+
+        console.log(new Date().getDay());
+
+        switch(dia){
+            case 0:
+                console.log('domingo')
+                break
+            case 1:
+                console.log('segunda')
+                break
+            case 2:
+                console.log('terça')
+                break
+            case  3:
+                console.log('quarta')
+                break
+            case  4:
+                console.log('quinta')
+                break
+            case 5:
+                console.log('sexta')
+                break
+            case 6:
+                console.log('sabado')
+            default:
+                console.log(' Dia não encontrado')    
+
+        }
+
+        if(dia == 0){
+            console.log('Domingo')
+        }
+        else if(dia == 1){
+            console.log('Segunda')
+        }
+        else if(dia == 2){
+            console.log('Terça')
+        }
+        else if(dia == 3){
+            console.log('Quarta')
+        }
+        else if(dia == 4){
+            console.log('Quinta')
+        }
+        else if(dia == 5){
+            console.log('Sexta')
+        }
+        else if(dia == 6){
+            console.log('Sabado')
+        }
+        else{
+            console.log('Dia não encontrado')
+        }
+
+
+
+
+        //dia = 0 - 6
+        //dia == 0 - domingo
+        //dia == 1 - segunda
+        //dia == 2 - terça
+        //dia == 3 - quarta
+        //dia == 4 - quinta
+        //dia == 5 - sexta
+        //dia == 6 - sabado
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
