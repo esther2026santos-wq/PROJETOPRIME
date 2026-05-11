@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções</title>
+</head>
+<body>
+    <script>
+        function saudacao(){
+            console.log('Olá Mundo!!');
+        }
+
+        saudacao();
+        console.log('teste');
+        console.log('teste');
+        console.log('teste');
+        console.log('teste');
+        console.log('teste');
+        saudacao();
+        saudacao();
+        saudacao();
+
+        function parametro(numero){
+            console.log('numero')
+        }
+
+        parametro(55)
+
+        function soma(num1 ,num2){
+            console.log('PARAMETRO 1 ' +  num1)
+            console.log('PARAMETRO 2 ' +  num1)
+            console.log('soma =' +  num1 + num2) // da erro
+            console.log('Soma de ${num1} e  ${num2} = $ {num1 + num2}' ) // soma de num1 e num2 = num1+num2
+           
+            console.log(num1+num2);
+        }
+
+        soma(25,5)
+
+    </script>
+</body>
+</html>

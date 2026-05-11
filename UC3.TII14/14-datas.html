@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datas</title>
+</head>
+<body>
+    <script>
+        // Objeto Date
+
+        // O objeto Date é usado para representar dats e horarios . Ele premita criar, manipular e formatar datas.
+
+        // Data atual
+        console.log(new Date()); // Exibe a data e hora atual
+
+        // Data especifica (ano,mes,dia,hora,minuto,segundo)
+        console.log(new Date(1991, 9, 25, 8, 11, 25)); // 25 de outubro de 1991, 08:11:25
+
+        // Data apartir de uma string
+        console.log(new Date("1991-10-25T08:11:24Z")) // ISO 8601
+        
+        const data = new Date();
+        console.log(data.getFullYear()); // ano atual
+        console.log(data.getMonth()); // mes atual
+        console.log(data.getDate()); // Dia do mes  
+        console.log(data.getDay()); // Dia do semana
+        console.log(data.getMinutes()); // Minutos
+        console.log(data.getMilliseconds()); // Milisegundos
+        console.log(data.getTime()); // Retorna o timestamp (milissegundo desde 1 de janeiro de 1970 - 'Unix Epoch')
+        
+    </script>
+</body>
+</html>
