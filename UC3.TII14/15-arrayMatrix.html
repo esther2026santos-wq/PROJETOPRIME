@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array e Matriz</title>
+</head>
+
+<body>
+    <script>
+        // O  que é array
+
+        // Um array é uma estrutura de dados que permite armazenar mútiplos valores em únicos variável. Em JavasScript, arrays são objetos especiais que armazenam elementos de forma indexada, começando do índice 0.
+
+        let frutas = ['Maça', 'Banana', 'Uva', 'Laranja'];
+        console.log(frutas)
+
+        let nomes = new Array('Esther', 'Laudiceia', 'Lidiceia', 'Orlando', 'Otavinho');
+        console.log(nomes)
+
+        let misto = [1, 'Jhenny', true, { nome: 'Esther', sobrenome: 'Mendes' }, [5, 3, 6]];
+
+        console.log(misto[3]['nome']);
+
+        console.log(misto[2]);
+
+        console.log(misto[4][1]);
+
+        let matriz = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9,],
+        ];
+
+        console.log(matriz)
+
+        console.log('------------');
+        numeros = [2, 6, 9, 5, 6];
+        console.log(numeros.length); // pegar tanho do array
+    
+        let texto = 'Ola mundo!';
+        console.log(texto[3]);
+        console.log(texto.length); // pegar tanho do array
+
+        for (i = 0; i < texto.length; i++) {
+            console.log(texto[i])
+
+            if (texto[i] == '!') {
+                console.log('Posição' + i + 1)
+            }
+        }
+
+        console.log('------------')
+        textocompleto = " "
+        for (i = 0; i < texto.length; i++) {
+            letra = texto[i];
+            textocompleto += letra
+        }
+
+        console.log(textocompleto)
+
+        //preencher um array
+        let tamanho = prompt("Quantos elementos você desejar no array");
+        tamanho= Number(tamanho);
+
+        let array1 = [];
+
+        for(i=0;i < tamanho; i++){
+            // pedir para o usuario preencher o array
+            //alert('Posição ${i+1}')
+            entrada = prompt('Digite o valor para o índice ${i:} ')
+            console.log(entrada)
+
+            array1 [i] = entrada
+        }
+            console.log(array1)
+        
+
+
+
+        //escolher quantidade de poções do array
+
+    
+
+
+    </script>
+
+</body>
+
+</html>

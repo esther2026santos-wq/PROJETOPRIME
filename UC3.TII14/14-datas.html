@@ -29,6 +29,70 @@
         console.log(data.getMilliseconds()); // Milisegundos
         console.log(data.getTime()); // Retorna o timestamp (milissegundo desde 1 de janeiro de 1970 - 'Unix Epoch')
         
+        // Timestamp
+
+        // O timestamp
+        //O timestamp é um número que representaa quantida de milissegundos desde 1 de janeiro de 1970(conhecido como "Unix Epoch"
+
+        var timestamp = Date.now(); // retorna a timestamp atual
+
+        console.log(timestamp)
+
+        dataAtual = new Date(timestamp);
+        console.log(dataAtual);
+
+        // Formatação de data
+
+        var dia = data.getDate();
+        var mes = data.getMonth() + 1;
+        var ano = data.getFullYear();
+
+        console.log(`${dia}/${mes}/${ano}`);
+
+        // Diferença entre datas 
+        // Você pode calcular a diferença entre duas datas subtraindo seus timestamp
+        console.log(`-----`)
+        var data1 = new Date(2026,5,12)
+        var data2 = new Date(2026,5,15)
+
+        var diferenca = data2 - data1;
+        console.log(diferenca)
+
+        var dias = diferenca / (10000 * 60 * 60 * 24)
+        console.log(dias);
+
+
+        // -----------------------
+        console.log(`-----------`)
+
+        let timestampDia = 86400000;
+        let qtdDia = 5;
+        let calculo = timestamp * qtdDia;
+
+        console.log(calculo)
+
+        var dias = diferenca / (10000 * 60 * 60 * 24)
+        console.log(dias);
+
+        // fuso horários (Times zones)
+
+        let formatador = new Intl.DateTimeFormat(
+            'pt-BR',
+            {
+                timeZone: 'America/Sao_Paulo',
+                hour: '2-digit',
+                minute: '2-digit',
+                second:'2-digit',
+            }
+        );
+        console.log(formatador.format(data));
+
+        console.log(data.toLocaleDateString())
+
+
+
+
+
     </script>
 </body>
 </html>
