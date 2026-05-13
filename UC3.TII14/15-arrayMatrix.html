@@ -61,27 +61,219 @@
         console.log(textocompleto)
 
         //preencher um array
-        let tamanho = prompt("Quantos elementos você desejar no array");
-        tamanho= Number(tamanho);
+         //escolher quantidade de poções do array
+        // let tamanho = prompt("Quantos elementos você desejar no array");
+        // tamanho= Number(tamanho);
 
-        let array1 = [];
+        // let array1 = [];
 
-        for(i=0;i < tamanho; i++){
-            // pedir para o usuario preencher o array
-            //alert('Posição ${i+1}')
-            entrada = prompt('Digite o valor para o índice ${i:} ')
-            console.log(entrada)
+        // for(i=0;i < tamanho; i++){
+        //     // pedir para o usuario preencher o array
+        //     //alert('Posição ${i+1}')
+        //     entrada = prompt('Digite o valor para o índice ${i:} ')
+        //     console.log(entrada)
 
-            array1 [i] = entrada
+        //     array1 [i] = entrada
+        // }
+        //     console.log(array1)
+
+        // converter o array em string
+        //O metodo toString() converter um array em uma string, separando os elementos por virgula
+
+        const fruits = ['Orange', 'Apple', 'Mango' ];
+
+        console.log(fruits)
+        console.log(fruits.toString()) 
+
+        // O metodo join() tambem converte um array em um string, mas permite especificar o separador
+
+        console.log(fruits.join(' * '));
+
+        numeros = [40,100,1,5,25,10];
+
+        // ordenar array
+
+        // O método sort() ordena os elementos de um array alfabeticamente ou numericamente.
+        // O método sort() altera o array original e retorna o array ordenado
+        // Por padrão, a ordenação é feita em ordem alfabética crescente.
+        // Para ordenar numericamente, é necessário passar por uma função de comparação como argumento.
+        // A funçao de comparação recebe dois parêmetros (a e b) e retorna um valor negativo, positivo ou zero, dependendo da comparação entre a e b.
+        // Se a  função de comparação retornar um valor negativo, a ordenação será feita em ordem crescente.
+        // Se a função de comparação retornar um valor positivo, a ordenação será feita em ordem decrescente.
+        // Se função de comparação retornar zero, os elementos permanecerão inalterados.
+
+        numeros.sort()
+        console.log(fruits)
+
+        numeros.sort((a,b) => a - b) // ordenar de forma crescente
+        console.log(numeros)
+
+        numeros.sort((a,b) => b - a) // ordenar de forma decrescente
+        console.log(numeros)
+
+        frutas = ['banana', 'Maça', 'laranja', 'Uva'];
+
+        console.log(frutas)
+
+        console.log(frutas.sort())
+
+        console.log(frutas.sort((a,b) => a.localeCompare (b)))
+
+        //atividade
+        //criar um array chamado animais e a adicione pelo menos 4 nomes de animais
+        //exiba no console o primeiro e o ultimo animal da lista 
+        //mostra no console o total de elementos no array
+
+        let animais = ['Macaco', 'Gato','Jacare', 'Leão'];
+        console.log(animais[0]);
+        console.log(animais[3]);
+        console.log(animais.length);
+        console.log(animais[animais.length - 1]);
+
+        // Adicionar e removendo elementos de um array 
+
+        // Adicinando elemento
+        // Existe dois tipos de métodos principais para adicionar elelmnetos a um array
+
+        // metodo push ()
+
+        frutas = ['Uva', 'Banana', 'Maça', 'Laranja']
+
+        console.log(frutas.push('Manga'));
+        console.log(frutas);
+
+        // metodo unshift()
+        frutas.unshift('Morango');
+        console.log(frutas);
+
+        // Remover elemento
+        //metodo pop() - remove do final 
+
+        frutas.pop();
+        console.log(frutas);
+
+        // Metodo shift() - remove do inicio 
+
+         frutas.pop();
+        console.log(frutas);
+
+        // percorrendo arrays
+
+        animais = ['Macaco', 'Gato','Jacare', 'Leão'];
+
+        // usando o laço de repetição for
+        for(i=0;i<animais.length;i++){
+            console.log(animais[i])
         }
-            console.log(array1)
+
+        console.log('---------------------')
+        // usando o laço de repetição for....for
+        for(animal of animais){
+            console.log(animal)
+        }
+        console.log('---------------------')
+
+         // usando o laço de repetição forEach()
+        animais.forEach(animal => console.log(animal))
+
+        teste = ' ';
+        animais.forEach(function(animal){
+
+        teste += animal;
+        teste+=" ";
+
+        });
+
+        console.log(teste);
+        console.log('---------------------')
+        // metodos uteis para manipulação de arrays
+
+        // indexOf() - encontra o indice de um elemento
+
+        let cores = ['Azul', 'Vermelho', 'Verde','Preto'];
+        console.log(cores.indexOf('Vermelho'))
+
+        // splice() - remove ou substitui elementos
+
+        //console.log(cores.splice(2,1))
+        console.log(cores.splice(2,1))
+        console.log(cores);
+
+        // slice() -retorna parte de um array
+
+        console.log(cores.slice(1,3))
+        console.log(cores)
         
 
+        // map() - retorna um novo array  modificado 
 
+        numeros = [40,100,1,5,25,10];
+        dobro = numeros.map(function(num){
+            console.log(num*2)
+        })
 
-        //escolher quantidade de poções do array
+        // filter() - filtra elementos com base em uma condição 
+        let pares = numeros.filter(function(num){
 
+            if(num % 2 ===0){
+                console.log(num)
+            }
+        });
+
+        // atividade
+        //o usuario entra com um numero positivo
+        //e o sistema fala se ele é positivo ou negativo
+
+        numUsuario = parseInt(prompt('Digite um numero'));
+        Number(numUsuario)
+
+        if(isNaN(numUsuario))
+        console.log("Erro: Insira apenas números válidos")
+
+        else if(numUsuario < 0){
+            console.log(`valor digitado ${numUsuario} é neutro`)
+        }
+        else if(numUsuario < 0){
+            console.log(`valor digitado ${numUsuario} é negativo`)
+        }
+        else{
+            console.log(`valor digitado ${numUsuario} é positivo`)
+        }
     
+        //atividade
+        //agora mostre se o numero é par ou impar
+
+        if(numUsuario % 2 ===0){
+            console.log(`O número ${numUsuario} é par!`);
+        }else{
+            console.log(`O número ${numUsuario} é impar!`);
+        }
+
+
+        // atividade 
+        //crie um array chamado alunos  com pelo meos 5 nomes 
+        //dicione um aluno novo ao final e outro no inicio
+        //remova o primeiro aluno da lista 
+        //esncontre o indice de um nome especifico
+        //filtre os alunos cujo nome tenha mais de 5 letras
+
+        let alunos = ['diego' , 'maria' , 'joão','romeu','julieta'];
+
+        alunos.push('mariana');
+        console.log(alunos);
+        alunos.unshift('paulo');
+        console.log(alunos);
+        alunos.shift('diego');
+        console.log(alunos);
+
+        console.log(alunos.indexOf('julieta'));
+
+        console.log(alunos.filter(nome => nome.length > 5));
+
+
+
+
+
 
 
     </script>
