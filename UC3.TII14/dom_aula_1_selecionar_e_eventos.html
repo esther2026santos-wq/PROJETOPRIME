@@ -219,12 +219,12 @@
 
         <div style="text-align: center; padding: 20px; background-color: #f0f0f0; border-radius: 4px; margin: 10px 0;">
             <div style="font-size: 48px; font-weight: bold; color: #007bff; margin: 20px 0;" id="contador">0</div>
-            <button>➕ Aumentar</button>
-            <button>➖ Diminuir</button>
-            <button>🔄 Resetar</button>
+            <button onclick="aumentarContador()">➕ Aumentar</button>
+            <button onclick="diminuirContador()">➖ Diminuir</button>
+            <button onclick="resetarContador()">🔄 Resetar</button>
         </div>
 
-        <div class="resultado" id="resultado7"></div>
+        <div class="resultado" id="resultado7"></div> 
 
         <!-- ============================================ -->
         <!-- RESUMO -->
@@ -284,7 +284,7 @@
     <script>
         // FUNÇÃO 1: getFlementById + onclick
         // - Variaveis declaradas fora das funções que têm escopo global
-        let constadorValor =
+        let constadorValor = 0;
 
         function selecionarPorIdComEvento(){
             //Passo 1 : Seleciona o elemento pelo ID ,se não existir o Elemento será null
@@ -437,6 +437,44 @@
             `;
         
         }
+
+        // Função 7: Contador - demostra manipulação de textos e eventos click
+        //  textContent: atualiza somente o texto do elemento
+
+        function aumentarContador() {
+           const display = document.getElementById('contador');
+           constadorValor++; 
+           display.textContent = constadorValor;
+           document.getElementById('resultado7').innerHTML = 
+           `<strong>✅ Contador aumentado!</strong><br>
+           Valor atual : ${constadorValor}
+        `;
+          
+
+       }
+        function diminuirContador() {
+           const display = document.getElementById('contador');
+           constadorValor--; 
+           display.textContent = constadorValor;
+           document.getElementById('resultado7').innerHTML = 
+           `<strong>✅ Contador diminuir!</strong><br>
+           Valor atual : ${constadorValor}
+        `;
+          
+
+       }
+
+        function resetarContador() {
+           const display = document.getElementById('contador');
+           constadorValor = 0; 
+           display.textContent = constadorValor;
+           document.getElementById('resultado7').innerHTML = 
+           `<strong>✅ Contador resetar!</strong><br>
+           Valor atual : ${constadorValor}
+        `;
+          
+
+       }
 
 
             
