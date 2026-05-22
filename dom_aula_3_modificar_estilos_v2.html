@@ -176,7 +176,9 @@
             <p>O método <code>classList.contains()</code> verifica se um elemento tem uma classe.</p>
         </div>
 
-        <button>Verificar se tem Classe "destaque"</button>
+        <button onclick="adicionarClasse()">Verificar se tem Classe "destaque"</button>
+        <button onclick="removerClasse()">Verificar se tem Classe "destaque"</button>
+        <button onclick="alterarClasse()">Verificar se tem Classe "destaque"</button>
 
         <div class="resultado" id="resultado4"></div>
 
@@ -191,8 +193,8 @@
 
         <div class="box-exemplo" id="caixa-animada"></div>
 
-        <button>Animar Caixa</button>
-        <button>Restaurar</button>
+        <button onclick="animar()">Animar Caixa</button>
+        <button onclick="restaurarAnimação()">Restaurar</button>
 
         <div class="resultado" id="resultado5"></div>
 
@@ -266,6 +268,275 @@
             </tr>
         </table>
     </div>
+    <script>
+        // Função 3: Adcionar e remover Classe
+
+        function adicionarClasse () {
+            const elemento = document.getElementById('elemento-classe');
+
+            // Adicionar classe "destaque"
+            elemento.classList.add('destaque');
+
+            document.getElementById('resultado3').innerHTML = 
+            ` <strong> ✅ Classe destaque adicionada!</strong><br>
+            
+            `;
+        }
+
+        function removerClasse (){
+            const elemento = document.getElementById('elemento-classe');
+
+            //Remove a Classe
+            elemento.classList.remove("destaque");
+
+            document.getElementById('resultado3').innerHTML = 
+            ` <strong>✅ classe destaque removida!</strong><br>
+            
+            `;
+        }
+
+        function alterarClasse (){
+            const elemento = document.getElementById('elemento-classe');
+            //alterar classe: se o elemento ja existe ele remove, se não existe ele adciona
+
+            elemento.classList.toggle('destaque');
+
+            //verificamos se tem classe desque adicionada
+            const temClasse = elemento.classList.contains('destaque');
+            // Fazemos uma verificação se aclasse foi adicionada ou removida
+            const status = temClasse ? 'adicinada' : 'removida';
+
+            document.getElementById('resultado3').innerHTML = 
+            ` <strong> ✅ Classe "destaque" foi ${status}</strong><br>
+            
+            `;
+        }
+
+        //Função 4: Verificar Classes
+
+        function verificarClasse (){
+
+            const elemento = getElementById('elemento-classe');
+
+            const temClasse = elemento.classList.contains('destaque');
+            const status = temClasse ? 'SIM, tem classe' : 'NÃO, tem classe' 
+
+            document.getElementById('resultado4').innerHTML = 
+            `<strong> ✅ Verificação: </strong><br>
+            O elemento tem a classe 'destaque'? ${status}
+
+            `;
+        }
+
+        function animar() {
+            const caixa = document.getElementById('caixa-animada');
+
+            //resetar a posiçao
+            //Antes de começar a animação, garentimos que o elemento volte ao estado inicial
+            //translateX(0px) -> posição horizontal inicial 
+            // rotate(0deg) -> sem rotação
+            caixa.style.transform = 'translateX(0px) rotate(0deg)'
+            // define a cor da caixa
+            caixa.style.backgroundColor = '#2196f3'
+
+
+            //iniciando a nossa animação
+            // Controle da animação, variaveis que controlam o movimento e rotação ao longo tempo
+            let posicao = 0; // posição horizontal (em pixels)
+            let rotacao = 0; // rotação (em graus)
+
+            // Loop de animação
+            // setInterval escuta a função repetidamente a cada 50 milisegundos
+            let intervalo = setInterval(() => {
+                // a cada executação,aumentamos a posição e rotação
+                posicao +=10; // move 10px para a direita
+                rotacao +=5; // gira 5 graus
+
+
+                // Modificar o estilo
+                // Atualiza o estilo transform com os novos valores
+                caixa.style.transform = `translateX(${posicao}px)rotate(${rotacao}deg)`;
+
+                //Mudar a cor 
+                // A cada 20px percorridos, a cor muda
+                if (posicao % 20 === 0){
+                    const cores = ['#2196f3', '#ff9800', '#4caf50', '#f44336', '#9c27b0'];
+
+                    // Calcula qual a cor usar com base na posiçao
+                    // Math.floor(posição/20) -> quantas trocas ja aconteceram
+                    // % cores.length -> garante que o indice não ultrapasse o array
+                    caixa.style.backgroundColor = cores[Math.floor(posicao/20) % cores.length];
+                }
+
+                if (posicao >= 500){
+                    clearInterval(intervalo);
+
+                    document.getElementById('resultado5').innerHTML = 
+                    `<strong> ✅ Animação completa </strong><br>
+                Posição final :  ${posicao}px<br>
+                Rotação final :  ${rotacao}°`;
+                }
+
+            },50)//Executar a cada 50ms (quantos menor, mais suave a animação)
+        }
+
+        function restaurarAnimação () {
+            const caixa = document.getElementById('caixa-animada');
+
+            caixa.style.transform = 'translateX(0px) rotate (0deg)';
+            caixa.style.backgroundColor = '#2196f3';
+
+            document.getElementById('resutado5').innerHTML = 
+            `<strong> 🔄️ Restaurar Animação completa</strong><br>
+            `;
+        }
+
+        // FUNÇÃO 1 : Modificar Textos  textContent
+        function modificaComTextContent() {
+            // Passo 1 : Selecionamos o elemento
+            titulo = document.getElementById('titulo-original');
+
+            titulo.textContent = "Título foi modificado com textContent!";
+
+            document.getElementById('resultado1').innerHTML = 
+            `
+                <strong>✅ Modificado!</strong>
+
+                Novo conteúdo: "${titulo.textContent}"
+            `;
+        }
+
+        function restaurarTitulo() {
+
+            document.getElementById('titulo-original').textContent = "Este é o título original";
+            document.getElementById('resultado1').innerHTML = "<strong>🔄️ Restaurado!</strong>"
+        }
+
+        // FUNÇÃO 2: Modificar texto com innerHTML
+
+        function modificarComInnerHTML() {
+            const paragrafo = document.getElementById('paragrafo-original');
+
+            paragrafo.innerHTML = `
+                <p><strong>Parágrafo foi modificado com innerHTML!</strong></p>
+                <p style="color: #28a745;">Agora temos  <em> formatação HTML</em>!</p>
+            `;
+
+            document.getElementById('resultado2').innerHTML = `
+            <strong>✅ Modificado!</strong>
+
+            Novo conteúdo HTML foi renderizado acima.
+            `;
+        }
+
+        function restaurarParagrafo() {
+            document.getElementById('paragrafo-original').innerHTML = "<p>Este é um parágrafo original</p>";
+            document.getElementById('resultado2').innerHTML = 
+            ` <strong> 🔄️Restaurado!</strong>
+            `;
+        }
+
+
+        //FUNÇÃO 3 : Adicionar item à lista
+
+        function adicionarItemLista(){
+            // Seleciona o  elemento
+            const lista = document.getElementById('lista');
+            // Cria um novo Elemento 
+            const novoItem = document.createElement('li');
+
+            // Definindo qual o novo item
+            novoItem.textContent = "Queijo";
+
+            lista.appendChild(novoItem);
+
+            document.getElementById('resultado3').innerHTML =
+            `
+                <strong>✅Item adicionado!</strong>
+
+                Novo item: "Queijo"
+            `;
+
+        }
+
+        function restaurarLista() {
+            const lista =  document.getElementById('lista');
+            lista.innerHTML = `
+                <li>Leite</li>
+                <li>Pão</li>
+            `;
+
+            document.getElementById('resultado3').innerHTML = " <strong>🔄️ Restaurado!</strong>";
+        }
+
+        // FUNÇÃO 4: Modificar Atributos
+
+        function modificarAtributoImg () {
+           const imagem = document.getElementById('imagem-exemplo');
+
+           imagem.setAttribute('width', '300');
+           imagem.setAttribute('height', '300');
+
+           document.getElementById('resultado4').innerHTML = 
+           `
+            <strong>✅ Atributos modificados!</strong>
+
+            width: 300px
+
+            height: 300px         
+           `;
+        }
+
+        function modificarAltImg() {
+            const imagem = document.getElementById('imagem-exemplo');
+
+           imagem.setAttribute('alt', 'texto alterado');
+           
+
+           document.getElementById('resultado4').innerHTML = 
+           `
+            <strong>✅ Atributos modificados!</strong>
+
+            Novo alt : "${imagem.getAttribute('alt')}"        
+           `;
+        }
+
+        function restaurarImg(){
+            const imagem = document.getElementById('imagem-exemplo');
+
+            imagem.setAttribute('alt', 'Imagem Exemplo');
+            imagem.removeAttribute('width');
+            imagem.removeAttribute('height');
+            document.getElementById('resultado4').innerHTML = 
+            `<strong>🔄️ Restaurado!</strong>`;
+        }
+
+
+        //FUNÇÃO 5: Obter atributos
+
+        function obterAtributosImg() {
+            const imagem = document.getElementById('imagem-exemplo');
+
+            const src = imagem.getAttribute('src');
+            const alt = imagem.getAttribute('alt');
+            const width = imagem.getAttribute('width') || 'não definido';
+            const height = imagem.getAttribute('height') || ' não definido';
+
+            document.getElementById('resultado5').innerHTML = `
+            <strong>✅ Atributos da Imagem: </strong>
+
+            src: "${src}"
+            alt: "${alt}"
+            width: "${width}"
+            height: "${height}"
+            `;
+        }
+
+
+
+    </script>
+
+
 
 </body>
 </html>
