@@ -274,18 +274,19 @@
 
             //Adicionar tarefas ao array 
             tarefas.push(tarefa);
-            inputTarefa.value = '';
+            inputTarefa.value = ' ';
             inputTarefa.focus()
 
             console.log('Tarefa adicionadas:', tarefa);
 
-            inputTarefa.value = '';
+            inputTarefa.value = ' ';
             inputTarefa.focus();
 
             console.log("Tarefas adicionadas:", tarefas)
 
-            renderizarTarefas();
-            atualizarEstatisticas();
+            renderizarTarefas()
+            atualizarEstatisticas()
+        
         }
 
         function renderizarTarefas() {
@@ -297,10 +298,10 @@
                 return;
             }
 
-            listaTarefas.classList = '';
-            listaTarefas.innerHTML = '';
+            listaTarefas.classList = ' ';
+            listaTarefas.innerHTML = ' ';
 
-            tarefas.forEach(tarefa => {
+            tarefas.forEach(tarefa =>{
                 const divTarefas = document.createElement('div');
 
                 divTarefas.className = 'tarefa';
@@ -313,7 +314,8 @@
                 checkbox.type = 'checkbox';
                 checkbox.className = 'checkbox';
                 checkbox.checked = tarefas.concluida;
-                checkbox.onchange = () => alterarTarefa(tarefa.id)
+                checkbox.onchange = () => alterarTarefa(tarefas.id)
+            
 
                 const textoTarefa = document.createElement('span');
                 textoTarefa.className = 'texto-terafa';
@@ -339,9 +341,40 @@
             if(tarefa) {
                 tarefa.concluido = !tarefa.concluido;
                 renderizarTarefas()
-                atualizarEstatisticas()
+                //atualizarEstatisticas()
             }
         }
+
+        function deletarTarefa(id){
+            //remove a tarefa do array
+            tarefas = tarefas.filter(t => t.id !== id);
+
+            //atualiza a vizualização
+            renderizarTarefas();
+            atualizarEstatisticas();
+        }
+
+        function atualizarEstatisticas(){
+
+            // total
+            const totalTarefas = tarefas.length;
+            console.log(totalTarefas);
+
+            const total = document.getElementById('total-tarefas');
+            total.innerText = totalTarefas;
+            console.log(total)
+
+            //tarefas concluidas
+
+            const totalTarefasConcluidas = tarefas.filter(t=> t.concluida).length
+
+            const totalConcluido = document.getElementById('tarefas-concluidas');
+
+            totalConcluido.innerText = totalConcluido
+            //tarefas pendentes
+        }
+
+
 
     </script>
 
