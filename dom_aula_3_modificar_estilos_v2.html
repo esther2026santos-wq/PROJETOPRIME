@@ -106,10 +106,10 @@
 
         <div id="elemento-estilo">Este elemento terá seus estilos modificados</div>
 
-        <button>Mudar Cor de Fundo</button>
-        <button>Mudar Tamanho da Fonte</button>
-        <button>Mudar Borda</button>
-        <button>Restaurar</button>
+        <button onclick="mudarCor()">Mudar Cor de Fundo</button>
+        <button onclick="mudarTamanho()">Mudar Tamanho da Fonte</button>
+        <button onclick="mudarBorda()">Mudar Borda</button>
+        <button onclick="restaura()">Restaurar</button>
 
         <div class="resultado" id="resultado1"></div>
 
@@ -126,8 +126,8 @@
             Elemento com múltiplos estilos
         </div>
 
-        <button>Aplicar Múltiplos Estilos</button>
-        <button>Restaurar</button>
+        <button onclick="aplicarMutiplosEstilos()">Aplicar Múltiplos Estilos</button>
+        <button onclick="restaurar()">Restaurar</button>
 
         <div class="resultado" id="resultado2"></div>
 
@@ -391,147 +391,101 @@
             `;
         }
 
-        // FUNÇÃO 1 : Modificar Textos  textContent
-        function modificaComTextContent() {
-            // Passo 1 : Selecionamos o elemento
-            titulo = document.getElementById('titulo-original');
+       //FUNÇÃO 1: Mudar a cor do fundo 
 
-            titulo.textContent = "Título foi modificado com textContent!";
-
-            document.getElementById('resultado1').innerHTML = 
-            `
-                <strong>✅ Modificado!</strong>
-
-                Novo conteúdo: "${titulo.textContent}"
-            `;
-        }
-
-        function restaurarTitulo() {
-
-            document.getElementById('titulo-original').textContent = "Este é o título original";
-            document.getElementById('resultado1').innerHTML = "<strong>🔄️ Restaurado!</strong>"
-        }
-
-        // FUNÇÃO 2: Modificar texto com innerHTML
-
-        function modificarComInnerHTML() {
-            const paragrafo = document.getElementById('paragrafo-original');
-
-            paragrafo.innerHTML = `
-                <p><strong>Parágrafo foi modificado com innerHTML!</strong></p>
-                <p style="color: #28a745;">Agora temos  <em> formatação HTML</em>!</p>
-            `;
-
-            document.getElementById('resultado2').innerHTML = `
-            <strong>✅ Modificado!</strong>
-
-            Novo conteúdo HTML foi renderizado acima.
-            `;
-        }
-
-        function restaurarParagrafo() {
-            document.getElementById('paragrafo-original').innerHTML = "<p>Este é um parágrafo original</p>";
-            document.getElementById('resultado2').innerHTML = 
-            ` <strong> 🔄️Restaurado!</strong>
-            `;
-        }
+        function mudarCor() {
+        const elemento = document.getElementById('elemento-estilo');
 
 
-        //FUNÇÃO 3 : Adicionar item à lista
+        elemento.style.backgroundColor = '#ff6b6b'
 
-        function adicionarItemLista(){
-            // Seleciona o  elemento
-            const lista = document.getElementById('lista');
-            // Cria um novo Elemento 
-            const novoItem = document.createElement('li');
+        document.getElementById('resultado1').innerHTML =
+        `<strong>✅ Cor modificada!</strong><br>
+        BackgroundColor: #ff6b6b
+        `;
+    }
 
-            // Definindo qual o novo item
-            novoItem.textContent = "Queijo";
+        function mudarTamanho() {
+        const elemento = document.getElementById('elemento-estilo');
 
-            lista.appendChild(novoItem);
+        elemento.style.fontSize = '24px';
 
-            document.getElementById('resultado3').innerHTML =
-            `
-                <strong>✅Item adicionado!</strong>
+        document.getElementById('resultado1').innerHTML =
+        ` <strong>✅Tamanho modificada!</strong><br>
+        fontSize : 24px
+        `;
+    }
 
-                Novo item: "Queijo"
-            `;
+        function mudarBorda() {
+        const elemento = document.getElementById('elemento-estilo');
 
-        }
+        elemento.style.border = '5px solid #4caf50'
 
-        function restaurarLista() {
-            const lista =  document.getElementById('lista');
-            lista.innerHTML = `
-                <li>Leite</li>
-                <li>Pão</li>
-            `;
-
-            document.getElementById('resultado3').innerHTML = " <strong>🔄️ Restaurado!</strong>";
-        }
-
-        // FUNÇÃO 4: Modificar Atributos
-
-        function modificarAtributoImg () {
-           const imagem = document.getElementById('imagem-exemplo');
-
-           imagem.setAttribute('width', '300');
-           imagem.setAttribute('height', '300');
-
-           document.getElementById('resultado4').innerHTML = 
-           `
-            <strong>✅ Atributos modificados!</strong>
-
-            width: 300px
-
-            height: 300px         
-           `;
-        }
-
-        function modificarAltImg() {
-            const imagem = document.getElementById('imagem-exemplo');
-
-           imagem.setAttribute('alt', 'texto alterado');
-           
-
-           document.getElementById('resultado4').innerHTML = 
-           `
-            <strong>✅ Atributos modificados!</strong>
-
-            Novo alt : "${imagem.getAttribute('alt')}"        
-           `;
-        }
-
-        function restaurarImg(){
-            const imagem = document.getElementById('imagem-exemplo');
-
-            imagem.setAttribute('alt', 'Imagem Exemplo');
-            imagem.removeAttribute('width');
-            imagem.removeAttribute('height');
-            document.getElementById('resultado4').innerHTML = 
-            `<strong>🔄️ Restaurado!</strong>`;
-        }
+        document.getElementById('resultado1').innerHTML =
+        `<strong>✅ Borda modificada!</strong><br>
+        border: 5px solid #4caf50
+        `;
+    }
 
 
-        //FUNÇÃO 5: Obter atributos
+        function restaurar() {
+        const elemento = document.getElementById('elemento-estilo');
 
-        function obterAtributosImg() {
-            const imagem = document.getElementById('imagem-exemplo');
+        // elemento.style.border = '2px solid #333';
+        elemento.style.removeProperty('border');
+        elemento.style.removeProperty('background-color');
+        elemento.style.removeProperty('font-size');
 
-            const src = imagem.getAttribute('src');
-            const alt = imagem.getAttribute('alt');
-            const width = imagem.getAttribute('width') || 'não definido';
-            const height = imagem.getAttribute('height') || ' não definido';
 
-            document.getElementById('resultado5').innerHTML = `
-            <strong>✅ Atributos da Imagem: </strong>
+        document.getElementById('resultado1').innerHTML=
+        `<strong>🔄️ Restaurado!</strong><br>
+        `;
+    }
 
-            src: "${src}"
-            alt: "${alt}"
-            width: "${width}"
-            height: "${height}"
-            `;
-        }
 
+        // Função 2 : Multiplos Estilos
+
+        function aplicarMultiplosEstilos() {
+
+        const elemento = document.getElementById('elemento-multiplo');
+
+        elemento.style.backgroundColor = '#4caf50';
+        elemento.style.color = 'white';
+        elemento.style.fontSize = '18px';
+        elemento.style.padding = '10px';
+        elemento.style.borderRadius = '10px';
+        elemento.style.textAlign = 'center';
+
+        document.getElementById('resultado2').innerHTML =
+        ` <strong>✅ Multiplos estilos aplicado !</strong><br>
+        backgroundColor: #4caf50<br>
+        color:white; <br>
+        fontSize: 18px;<br>
+        padding: 10px;<br>
+        borderRadius: 10px;<br>
+        textAlign: center;
+        `;
+
+    }
+
+        function restaurarMultiplos() {
+        const elemento = document.getElementById('elemento-multiplo');
+
+    // elemento.removeAttribute('style');
+
+        elemento.style.backgroundColor = '#e0e0e0';
+        elemento.style.color = '#000';
+        elemento.style.fontSize = '16px';
+        elemento.style.padding = '20px';
+        elemento.style.borderRadius ='0px';
+        elemento.style.textAlign = 'left';
+
+
+        document.getElementById('resultado2').innerHTML =
+        `<strong>🔄️ Restaurado!</strong><br>
+        `;
+
+    }
 
 
     </script>
