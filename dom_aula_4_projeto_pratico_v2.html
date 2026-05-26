@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -194,6 +195,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>📝 Lista de Tarefas</h1>
@@ -202,11 +204,7 @@
         <!-- INPUT PARA ADICIONAR TAREFAS -->
         <!-- ============================================ -->
         <div class="input-container">
-            <input 
-                type="text" 
-                id="input-tarefa" 
-                placeholder="Adicione uma nova tarefa..."
-            >
+            <input type="text" id="input-tarefa" placeholder="Adicione uma nova tarefa...">
             <button onclick="adicionarTarefas()">Adicionar</button>
         </div>
 
@@ -241,10 +239,10 @@
         <!-- BOTÕES DE AÇÃO -->
         <!-- ============================================ -->
         <div class="botoes-acao">
-            <button class="botao-limpar-concluidas">
+            <button class="botao-limpar-concluidas" onclick="limparConcluidas()">
                 Limpar Concluídas
             </button>
-            <button class="botao-limpar">
+            <button class="botao-limpar" onclick="limparTudo()">
                 Limpar Tudo
             </button>
         </div>
@@ -255,7 +253,7 @@
 
         // Função de adicionar
         function adicionarTarefas() {
-            const  inputTarefa = document.getElementById('input-tarefa')
+            const inputTarefa = document.getElementById('input-tarefa')
 
             const texto = inputTarefa.value.trim();
 
@@ -268,8 +266,8 @@
             //Criação de um objeto de tarefas
             const tarefa = {
                 id: Date.now(),
-                texto : texto,
-                concluido : false
+                texto: texto,
+                concluido: false
             }
 
             //Adicionar tarefas ao array 
@@ -286,7 +284,7 @@
 
             renderizarTarefas()
             atualizarEstatisticas()
-        
+
         }
 
         function renderizarTarefas() {
@@ -301,7 +299,7 @@
             listaTarefas.classList = ' ';
             listaTarefas.innerHTML = ' ';
 
-            tarefas.forEach(tarefa =>{
+            tarefas.forEach(tarefa => {
                 const divTarefas = document.createElement('div');
 
                 divTarefas.className = 'tarefa';
@@ -313,9 +311,9 @@
                 const checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
                 checkbox.className = 'checkbox';
-                checkbox.checked = tarefas.concluida;
-                checkbox.onchange = () => alterarTarefa(tarefas.id)
-            
+                checkbox.checked = tarefa.concluido;
+                checkbox.onchange = () => alterarTarefa(tarefa.id)
+
 
                 const textoTarefa = document.createElement('span');
                 textoTarefa.className = 'texto-terafa';
@@ -332,20 +330,26 @@
 
                 listaTarefas.appendChild(divTarefas);
             })
+
         }
+
+
 
         function alterarTarefa(id) {
 
+            console.log('teste')
             const tarefa = tarefas.find(t => t.id === id);
 
-            if(tarefa) {
+            console.log(tarefas)
+
+            if (tarefa) {
                 tarefa.concluido = !tarefa.concluido;
                 renderizarTarefas()
-                //atualizarEstatisticas()
+                atualizarEstatisticas()
             }
         }
 
-        function deletarTarefa(id){
+        function deletarTarefa(id) {
             //remove a tarefa do array
             tarefas = tarefas.filter(t => t.id !== id);
 
@@ -354,7 +358,9 @@
             atualizarEstatisticas();
         }
 
-        function atualizarEstatisticas(){
+        function atualizarEstatisticas() {
+
+            console.log('teste')
 
             // total
             const totalTarefas = tarefas.length;
@@ -366,17 +372,45 @@
 
             //tarefas concluidas
 
-            const totalTarefasConcluidas = tarefas.filter(t=> t.concluida).length
+            const totalTarefasConcluidas = tarefas.filter(t => t.concluido).length
+            console.log(totalTarefasConcluidas)
 
             const totalConcluido = document.getElementById('tarefas-concluidas');
+            console.log(totalConcluido)
 
-            totalConcluido.innerText = totalConcluido
+            totalConcluido.innerText = totalTarefasConcluidas
+
+
             //tarefas pendentes
+
+            const totalTarefasPendente = totalTarefas - totalTarefasConcluidas
+
+            document.getElementById('tarefas-pendentes').innerText = totalTarefasPendente
+
         }
+
+        function limparTudo() {
+            tarefas = [];
+            renderizarTarefas();
+            atualizarEstatisticas();
+
+        }
+
+
+        function limparConcluidas() {
+            tarefas = tarefas.filter(t=> !t.concluido)
+
+            renderizarTarefas();
+            atualizarEstatisticas();
+
+
+        }
+
 
 
 
     </script>
 
 </body>
+
 </html>
