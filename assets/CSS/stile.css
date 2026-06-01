@@ -107,7 +107,7 @@ body{
 .btn-neon {
     background: linear-gradient(135deg,var(--primary--neon), #9d50bb); /*Cor de fundo no estilo grediente*/
     color: #ffff; /*Cor de texto*/
-    box-shadow: 0 4px 15px rgba(123, 47, 247, 0.3) /*Sombra colorida*/
+    box-shadow: 0 4px 15px rgba(92, 10, 223, 0.3) /*Sombra colorida*/
 }
 
 .btn-neon:hover{
@@ -288,11 +288,11 @@ body{
 }
 
 .btn-dark{
-    border: 1px solid #1a1d2e;
+    border: 1px solid #b1bd0f;
 }
 
 .btn-dark:hover {
-    background: rgba(52, 20, 105, 0.1);
+    background: rgba(71, 216, 5, 0.1);
 }
 
 /*seção do blog*/
@@ -343,12 +343,28 @@ body{
 
 }
 /*Responsividade para outras telas*/
-@media(max-width: 992px) {
-    .nav-menu,
-    .nav-btns {
-        display: none; /*Ocultar os elementos*/
+@media(max-width: 768px) {
+    
+        display: block; /*Ocultar os elementos*/
 
+        #menu-nav {
+        display: none;
+        position: absolute;
+        top: 78px;
+        right: 0;
+        width: 100%;
+        background: rgb(8, 207, 68);
     }
+
+    #menu-nav ul {
+        flex-direction: column;
+    }
+
+    .show{
+        display: block!important;
+    }
+
+    
     
 }
 
