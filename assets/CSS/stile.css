@@ -2,8 +2,8 @@
 
 /* root: seletor para elementos riz do documento. usado par definir variaveis CSS Globais */
 :root{
-    --bg--dark: #2C4C8C; /*variavel para cor de fundo*/
-    --bg--card: #002162; /*variavel de cor de fundo do card*/
+    --bg--dark: #071533; /*variavel para cor de fundo*/
+    --bg--card: #0c57ee; /*variavel de cor de fundo do card*/
     --primary--neon: #002162 ; /*variavel de cor neon primaria*/
     --segundary--neon : #00143B; /*variavel de cor neon segundaria*/
     --text-main: #ffff; /*variavel cor de texto*/
@@ -45,11 +45,11 @@ body{
     height: 80px; /*Define altura fixa da navbar*/
     display: flex; /* Usa flexbox para o layout*/
     align-items: center; /* Alinha os itens verticalmente ao centro*/
-    background-color:  rgba(15, 17, 26, 0.95); 
+    background-color:  rgba(11, 13, 22, 0.95); 
     position: sticky; /*Fixar o navbar no topo durante a rolagem*/
     top: 0; /*Posicina o topo do viewport*/
     z-index: 1000; /*garante que o navbar fique acima dos outros elementos*/
-    border-bottom: 1px solid #2a2d3e;
+    border-bottom: 1px solid #051881;
 
 }
 
@@ -105,23 +105,23 @@ body{
 }
 
 .btn-neon {
-    background: linear-gradient(135deg,var(--primary--neon), #9d50bb); /*Cor de fundo no estilo grediente*/
-    color: #ffff; /*Cor de texto*/
-    box-shadow: 0 4px 15px rgba(92, 10, 223, 0.3) /*Sombra colorida*/
+    background: linear-gradient(135deg,var(--primary--neon), #1dca17); /*Cor de fundo no estilo grediente*/
+    color: #e90ba6; /*Cor de texto*/
+    box-shadow: 0 4px 15px rgba(63, 14, 143, 0.3) /*Sombra colorida*/
 }
 
 .btn-neon:hover{
     transform: translateY(-2px); /*Move ligeiramente para cima*/
-    box-shadow: 0 6px 20px rgba(123, 47, 247, 0.5) /*Sombra maior no hever*/
+    box-shadow: 0 6px 20px rgba(111, 65, 185, 0.5) /*Sombra maior no hever*/
 }
 
 .btn-outline {
     border: 1px solid var(--primary--neon); /*Borda usando a variavel*/
-    color: #ffff; /*Cor do texto*/
+    color: #940f0f; /*Cor do texto*/
 }
 
 .btn-outline:hover {
-    background: rgba(123, 47, 247, 0.1);
+    background: rgba(52, 190, 121, 0.1);
 }
 
 /*Hero section*/
@@ -176,7 +176,7 @@ body{
 /*Classe de seção de funcionalidade*/
 .feature{
     padding: 80px 0; /*preenchimento apenas vertical*/
-    background: #0a0c14;
+    background: #0e1079;
 }
 
 /*Classe do titulo de seção*/
@@ -284,7 +284,7 @@ body{
 }
 
 .plan-highlight{
-    background: #7d31f3;
+    background: #6813e9;
 }
 
 .btn-dark{
@@ -292,13 +292,13 @@ body{
 }
 
 .btn-dark:hover {
-    background: rgba(71, 216, 5, 0.1);
+    background: rgba(57, 161, 8, 0.1);
 }
 
 /*seção do blog*/
 .blog{
     padding: 80px;
-    background: #0a0c14;
+    background: #122c96;
 }
 
 .grid-blog{
@@ -367,5 +367,157 @@ body{
     
     
 }
+
+* {margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
+
+
+
+body {
+font-family: sans-serif;
+}
+
+ 
+
+/* Navbar */
+
+.navbar {
+
+position: relative;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1rem 2rem;
+background-color: #333;
+color: #fff;
+}
+
+
+
+.logo {
+font-size: 1.5rem;
+font-weight: bold;
+}
+
+
+
+/* Menu Desktop */
+
+.nav-links {
+display: flex;
+list-style: none;
+gap: 1.5rem;
+}
+
+
+
+.nav-links a {
+color: white;
+text-decoration: none;
+transition: 0.3s;
+}
+
+
+
+.nav-links a:hover {
+color: #ddd;
+}
+
+
+
+/* Botão Hambúrguer */
+
+.menu-toggle {
+display: none;
+flex-direction: column;
+gap: 6px;
+background: transparent;
+border: none;
+cursor: pointer;
+}
+
+
+
+.menu-toggle .bar {
+width: 25px;
+height: 3px;
+background-color: white;
+transition: all 0.3s ease;
+}
+
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+
+
+.menu-toggle {
+ display: flex;
+ }
+
+ .nav-links {
+
+position: absolute;
+top: 100%;
+left: 0;
+width: 100%;
+background-color: #333;
+flex-direction: column;
+align-items: center;
+gap: 0;
+padding: 1rem 0;
+opacity: 0;
+visibility: hidden;
+transform: translateY(-20px);
+transition: all 0.4s ease;
+pointer-events: none;
+}
+
+
+
+.nav-links li {
+margin: 1rem 0;
+}
+
+
+
+.nav-links.active {
+opacity: 1;
+visibility: visible;
+transform: translateY(0);
+pointer-events: all;
+
+}
+
+}
+
+
+
+/* Animação do X */
+
+.menu-toggle.active .bar:nth-child(1) {
+transform: rotate(45deg) translate(7px, 6px);
+}
+
+
+
+.menu-toggle.active .bar:nth-child(2) {
+opacity: 0;
+}
+
+
+
+.menu-toggle.active .bar:nth-child(3) {
+transform: rotate(-45deg) translate(7px, -6px);
+}
+
+
+
+
 
     
