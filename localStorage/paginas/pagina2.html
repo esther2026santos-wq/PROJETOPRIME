@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 2</title>
+</head>
+<body>
+    <h1>Tela 2 - Perfil</h1>
+
+    <p id="resultado"></p>
+    <a href="pagina1.html">Voltar</a>
+
+    <script>
+        const nome= localStorage.getItem('nomeUsuario');
+
+        const resultado = document.getElementById('resultado');
+
+        if (nome){
+            resultado.innerText = `Bem-vindo ${nome}`
+        }else{
+            resultado.innerText = 'Nenhum usuário cadastrado';
+        }
+    </script>
+    
+</body>
+</html>

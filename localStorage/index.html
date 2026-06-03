@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage</title>
+</head>
+<body>
+    <script>
+        // cri um localStorage - 
+        // localStorage.setItem('chave','valor')
+        localStorage.setItem('nome','Esther');
+
+        // recupera os dados do localStorage
+        // localStorage.getItem('chave')
+        let nome = localStorage.getItem('nome');
+
+        console.log(nome);
+
+        // remover um item 
+        //  localStorage.removeItem('chave')
+        localStorage.removeItem('nome');
+        nome = localStorage.getItem('nome');
+        console.log(nome);
+
+        // lipar todo o localStorage
+        localStorage.clear();
+        console.log(nome);
+
+        if (nome) {
+            console.log('existe')
+        }else {
+            console.log('não existe')
+        }
+
+        
+    </script>
+</body>
+</html>
