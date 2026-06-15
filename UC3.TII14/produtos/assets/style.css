@@ -1,0 +1,31 @@
+.cards{
+            display: flex;
+            justify-content: space-around; <!-- espaço entre os cards--->
+        }
+
+        .card{
+            border: 1px solid;
+            text-align: center;
+            padding: 20px;
+         
+        }
+
+        .card img{
+            width: 470px;
+            height: 470px;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        h2{
+            font-size: 10px;
+            text-transform: uppercase;
+        }
+
+        button{
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #0ee607;
+        }

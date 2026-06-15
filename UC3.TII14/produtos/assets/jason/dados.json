@@ -1,0 +1,22 @@
+[
+    {
+        "nome":"produto1",
+        "preco":"5.000,00",
+        "imagem" : "Console-Playstation-5-Slim-Digital-Edition-825GB-USB-HDMI-Branco_1772549611.webp"
+    },
+
+    {
+        "nome":"produto2",
+        "preco":"3.989,00",
+        "imagem" : "61oPb9El-SL._AC_UF1000,1000_QL80_.jpg"
+
+    },
+
+    {
+        "nome":"produto3",
+        "preco":"3,789.00",
+        "imagem" : "61oPb9El-SL._AC_UF1000,1000_QL80_.jpg"
+    }
+
+    
+]

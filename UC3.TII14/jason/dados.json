@@ -1,0 +1,21 @@
+[
+    {
+        "nome" : "Esther",
+        "idade" : "24",
+        "dados" : {
+            "telefone": "11999-999",
+            "email": "esther@email.com"
+        },
+        "avatar" : "avatar-esther.png"
+    },
+    {
+        "nome" : "Laudiceia",
+        "idade" : "54",
+        "dados" : {
+            "telefone": "11999-999",
+            "email": "laudiceia@email.com"
+        },
+        "avatar" : "avatar-esther.png"
+        
+    }
+]
